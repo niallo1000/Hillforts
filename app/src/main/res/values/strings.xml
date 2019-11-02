@@ -7,5 +7,6 @@
   <string name="hint_hillfortEmail">Email </string>
   <string name="hint_hillfortPassword">Password </string>
   <string name="menu_addHillfort">Add Hillfort</string>
+  <string name="menu_cancelHillfort">Cancel</string>
 
 </resources>
