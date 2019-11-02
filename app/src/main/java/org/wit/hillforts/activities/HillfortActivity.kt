@@ -13,7 +13,10 @@ import org.wit.hillforts.R
 
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
+    //var hillfort = HillfortModel()
+
     var hillfort = HillfortModel()
+    val hillforts = ArrayList<HillfortModel>()
 
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -22,12 +25,22 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     btnAdd.setOnClickListener() {
         hillfort.title = hillfortTitle.text.toString()
-        if (hillfort.title.isNotEmpty()) {
-            info("add Button Pressed: $hillfort")
+        hillfort.description = description.text.toString()
+        hillfort.location = location.text.toString()
+        visited.setOnClickListener() {
+            hillfort.visited = true
         }
-        else {
-            toast ("Please Enter a title")
+        if (hillfort.title.isNotEmpty()) {
+            hillforts.add(hillfort.copy())
+
+            info("add Button Pressed: ${hillfort}")
+            for (i in hillforts.indices) {
+                info("Hillfort[$i]:${this.hillforts[i]}")
+            }
+        } else {
+            toast("Please Enter a title")
         }
     }
 }
+
 }
