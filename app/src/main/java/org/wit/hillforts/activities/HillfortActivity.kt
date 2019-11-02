@@ -6,13 +6,14 @@ import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
+import org.wit.hillfort.models.HillfortModel
 import org.wit.hillforts.R
-import org.wit.hillforts.models.HillfortsModel
+
 
 
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
-    var hillforts = HillfortsModel()
+    var hillfort = HillfortModel()
 
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -20,9 +21,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 
     btnAdd.setOnClickListener() {
-        hillforts.title = hillfortsTitle.text.toString()
-        if (hillforts.title.isNotEmpty()) {
-            info("add Button Pressed: $hillforts")
+        hillfort.title = hillfortTitle.text.toString()
+        if (hillfort.title.isNotEmpty()) {
+            info("add Button Pressed: $hillfort")
         }
         else {
             toast ("Please Enter a title")
